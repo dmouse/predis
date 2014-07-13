@@ -24,11 +24,11 @@ class Predis implements RedisConnectionInterface {
   private $redis;
 
   /**
-   * The config factory to get the redis configuration
+   * The config factory to get the redis configuration.
    *
    * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
-  private $config_factory;
+  private $configFactory;
 
   /**
    * Predis class constructor.
@@ -37,7 +37,7 @@ class Predis implements RedisConnectionInterface {
    *   The config factory.
    */
   public function __construct(ConfigFactoryInterface $config_factory) {
-    $this->config_factory = $config_factory;
+    $this->configFactory = $config_factory;
   }
 
   /**
@@ -47,6 +47,7 @@ class Predis implements RedisConnectionInterface {
    *   Configuration settings.
    *
    * @return \Predis\Client
+   *   Return a new connection to Redis service.
    */
   protected function makeRedisConnection(array $config) {
     $config += $this->defaultOptions();
@@ -58,6 +59,7 @@ class Predis implements RedisConnectionInterface {
    * Return the default options.
    *
    * @return array
+   *   Return a default values to connect on Redis service.
    */
   protected function defaultOptions() {
     return array(
@@ -76,7 +78,7 @@ class Predis implements RedisConnectionInterface {
       return $this->redis;
     }
 
-    $settings = $this->config_factory->get('predis.settings');
+    $settings = $this->configFactory->get('predis.settings');
     $config = $settings->get('connections');
 
     return $this->makeRedisConnection($config);

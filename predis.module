@@ -18,7 +18,7 @@ function predis_help($path, $arg) {
 }
 
 /**
- * Implements hook_permission.
+ * Implements hook_permission().
  */
 function predis_permission() {
   return array(
