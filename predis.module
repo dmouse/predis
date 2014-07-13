@@ -19,12 +19,11 @@ function predis_help($path, $arg)
   }
 }
 
-function predis_permissions()
-{
-  return [
-    'predis administration' => [
+function predis_permissions() {
+  return array(
+    'predis administration' => array(
       'title' => t('Predis administration'),
       'restrict access' => TRUE,
-    ], 
-  ];
+    ), 
+  );
 }
