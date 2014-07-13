@@ -27,6 +27,6 @@ public function __construct(RedisConnectionInterface $redis) {
 // ...
 ```
 
-Related modules:
-https://www.drupal.org/project/redis
-https://www.drupal.org/project/redis_queue
+#### Related modules:
+* https://www.drupal.org/project/redis
+* https://www.drupal.org/project/redis_queue
