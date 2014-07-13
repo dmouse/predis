@@ -1,7 +1,7 @@
 {
     "name": "dmouse/predis",
     "require": {
-        "predis/predis": "dev-master"
+        "predis/predis": "~0.8.0"
     },
     "authors": [
         {
