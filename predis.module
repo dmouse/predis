@@ -8,14 +8,12 @@
 /**
  * Implements hook_help().
  */
-
-function predis_help($path, $arg)
-{
+function predis_help($path, $arg) {
   switch ($path) {
-    case 'admin/help#predis':
+    case 'help.page.predis':
       $output = 'A wrapper for Predis library';
       return $output;
-    break;
+
   }
 }
 

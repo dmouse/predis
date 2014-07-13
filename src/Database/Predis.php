@@ -66,8 +66,7 @@ class Predis implements RedisConnectionInterface {
   /**
    * {@inheritdoc}
    */
-  final public function getConnection()
-  {
+  final public function getConnection() {
     if ($this->redis) {
       return $this->redis;
     }
