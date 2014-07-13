@@ -1,5 +1,5 @@
 services:
-  predis.connnection:
+  predis.connection:
     class: Drupal\predis\Database\Predis
     calls: 
       - [getConnection]
