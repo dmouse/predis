@@ -10,7 +10,7 @@ interface RedisConnectionInterface
 {
   /**
    * Return Redis connection
-   * @return [type] [description]
+   * @return \Predis\Client
    */
   public function getConnection();
 
