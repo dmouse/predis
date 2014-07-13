@@ -1,7 +1,8 @@
 Predis module
 =============
 
-This module provides a service connection to Redis using Predis library, this module only provides a service to be used in other modules.
+This module provides a service connection to Redis using Predis library,
+this module only provides a service to be used in other modules.
 
 ### How to install
 This module need predis in the root composer.json
