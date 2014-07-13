@@ -1,5 +1,7 @@
 {
-    "name": "dmouse/predis",
+    "name": "drupal/predis",
+    "type": "drupal-module",
+    "keywords": ["Drupal", "Predis", "Redis"],
     "require": {
         "predis/predis": "~0.8.0"
     },
