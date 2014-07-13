@@ -6,10 +6,11 @@
 
 namespace Drupal\predis;
 
-interface RedisConnectionInterface
-{
+interface RedisConnectionInterface {
+
   /**
    * Return Redis connection
+   * 
    * @return \Predis\Client
    */
   public function getConnection();

@@ -1,17 +1,24 @@
 <?php
+
 /**
  * @file
  * Contains Drupal\predis\Database\Predis.
  */
+
 namespace Drupal\predis\Database;
 
 use Predis\Client;
 use Drupal\predis\RedisConnectionInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
 
-class Predis implements RedisConnectionInterface
-{
+/**
+ * Predis class to connect in Redis service.
+ */
+class Predis implements RedisConnectionInterface {
+
   /**
+   * Connection to Redis service.
+   * 
    * @var \Predis\Client
    */
   private $redis;
@@ -22,15 +29,21 @@ class Predis implements RedisConnectionInterface
   private $config_factory;
 
   /**
+   * Predis class constructor.
+   * 
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    */
-  public function __construct(ConfigFactoryInterface $config_factory)
-  {
+  public function __construct(ConfigFactoryInterface $config_factory) {
     $this->config_factory = $config_factory;
   }
 
-  protected function makeRedisConnection($config)
-  {
+  /**
+   * Create a new connection to Redis service.
+   * 
+   * @param  array $config
+   * @return \Predis\Client
+   */
+  protected function makeRedisConnection($config) {
     $config += $this->defaultOptions();
     $this->redis = new Client($config);
     return $this->redis;
@@ -38,7 +51,8 @@ class Predis implements RedisConnectionInterface
 
   /**
    * Default options
-   * @return Array
+   * 
+   * @return array
    */
   protected function defaultOptions() {
     return array(

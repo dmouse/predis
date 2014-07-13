@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains predis.module
+ * Contains predis module hooks.
  */
 
 /**
