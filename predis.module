@@ -17,11 +17,14 @@ function predis_help($path, $arg) {
   }
 }
 
-function predis_permissions() {
+/**
+ * Implements hook_permission.
+ */
+function predis_permission() {
   return array(
     'predis administration' => array(
       'title' => t('Predis administration'),
       'restrict access' => TRUE,
-    ), 
+    ),
   );
 }

@@ -7,13 +7,15 @@
 
 namespace Drupal\predis;
 
+/**
+ * Predis module interface.
+ */
 interface RedisConnectionInterface {
 
   /**
-   * Return Redis connection
+   * Return the active Redis connection.
    * 
    * @return \Predis\Client
    */
   public function getConnection();
-
 }
