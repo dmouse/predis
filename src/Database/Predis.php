@@ -12,17 +12,17 @@ use Drupal\Core\Config\ConfigFactoryInterface;
 class Predis implements RedisConnectionInterface
 {
   /**
-   * @var Predis\Client
+   * @var \Predis\Client
    */
   private $redis;
 
   /**
-   * @var Drupal\Core\Config\ConfigFactoryInterface
+   * @var \Drupal\Core\Config\ConfigFactoryInterface
    */
   private $config_factory;
 
   /**
-   * @param Drupal\Core\Config\ConfigFactoryInterface $config_factory
+   * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    */
   public function __construct(ConfigFactoryInterface $config_factory)
   {
