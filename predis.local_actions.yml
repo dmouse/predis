@@ -1,6 +1,0 @@
-predis.add:
-  route_name: 'predis.add'
-  title: 'Add PredisSettings'
-  appears_on:
-    - predis.list
-
