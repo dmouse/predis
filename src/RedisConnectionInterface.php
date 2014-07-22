@@ -15,8 +15,9 @@ interface RedisConnectionInterface {
   /**
    * Return the active Redis connection.
    *
+   * @param string $connection
    * @return \Predis\Client
    *   Return the active connection to Redis service.
    */
-  public function getConnection();
+  public function getConnection(string $connection);
 }
