@@ -10,6 +10,7 @@ namespace Drupal\predis\Database;
 use Predis\Client;
 use Drupal\predis\RedisConnectionInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
+use Drupal\Core\Entity\Query\QueryFactory;
 
 /**
  * Predis class to connect in Redis service.
@@ -31,13 +32,22 @@ class Predis implements RedisConnectionInterface {
   private $configFactory;
 
   /**
+   * The QueryFactory class to get configurations.
+   *
+   * @var QueryFactory
+   */
+  private $queryFactory;
+
+  /**
    * Predis class constructor.
    *
    * @param \Drupal\Core\Config\ConfigFactoryInterface $config_factory
    *   The config factory.
    */
-  public function __construct(ConfigFactoryInterface $config_factory) {
+  public function __construct(ConfigFactoryInterface $config_factory,
+                              QueryFactory $query_factory) {
     $this->configFactory = $config_factory;
+    $this->queryFactory = $query_factory;
   }
 
   /**
@@ -73,14 +83,20 @@ class Predis implements RedisConnectionInterface {
   /**
    * {@inheritdoc}
    */
-  final public function getConnection() {
-    if ($this->redis) {
-      return $this->redis;
-    }
-
-    $settings = $this->configFactory->get('predis.settings');
-    $config = $settings->get('connections');
-
+  final public function getConnection(string $connection) {
+    $config = $this->getSettings($connection);
     return $this->makeRedisConnection($config);
+  }
+
+  /**
+   * @param string $id
+   *   The id connection.
+   * @return mixed
+   *   Return connection settings.
+   */
+  private function getSettings(string $id) {
+    return $this->entityQuery->get('predis')
+      ->condition('id', $id)
+      ->execute();
   }
 }
