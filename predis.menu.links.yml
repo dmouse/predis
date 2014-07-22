@@ -1,0 +1,5 @@
+predis.connections:
+  title: 'Predis Connections'
+  description: 'Manage a Predis connections'
+  parent: system.admin_config_development
+  route_name: predis.list
