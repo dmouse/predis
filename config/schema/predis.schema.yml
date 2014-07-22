@@ -1,0 +1,24 @@
+predis.predis.*:
+  type: config_entity
+  label: 'Predis connection'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    uuid:
+      type: string
+    schema:
+      type: string
+      label: 'Schema'
+    host:
+      type: string
+      label: 'Hostname'
+    port:
+      type: string
+      label: 'Port'
+    database:
+      type: string
+      label: 'Database number'
