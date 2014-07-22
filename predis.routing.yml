@@ -1,0 +1,32 @@
+# PredisSettings routing definition
+predis.list:
+  path: '/admin/config/development/predis'
+  defaults:
+    _entity_list: 'predis'
+    _title: 'PredisSettings Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+predis.add:
+  path: '/admin/config/development/predis/add'
+  defaults:
+    _entity_form: 'predis.add'
+    _title: 'Add PredisSettings'
+  requirements:
+    _permission: 'administer site configuration'
+
+predis.edit:
+  path: '/admin/config/development/predis/{predis}'
+  defaults:
+    _entity_form: 'predis.edit'
+    _title: 'Edit PredisSettings'
+  requirements:
+    _permission: 'administer site configuration'
+
+predis.delete:
+  path: '/admin/config/development/predis/{predis}/delete'
+  defaults:
+    _entity_form: 'predis.delete'
+    _title: 'Delete PredisSettings'
+  requirements:
+    _permission: 'administer site configuration'
